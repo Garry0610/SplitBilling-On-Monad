@@ -51,8 +51,7 @@ already paid.
 | **Github repo** | https://github.com/Garry0610/SplitBilling-On-Monad |
 | **Category** | Monad Testnet |
 | **Contract address** | 0x7aA08a633DFFc9028a6836935Cc2A9aAfBe8C44a |
-| **Demo video** | `<link, ≤3 min>` |
-| **Post URL** | `<social media post link>` |
+| **Demo video** | https://youtu.be/3lov1K1ijK8 |
 
 ## 5. Tech Stack
 
