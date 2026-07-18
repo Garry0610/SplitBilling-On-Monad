@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #0E091C;
+  background-image: radial-gradient(
+    ellipse 900px 600px at 50% 0%,
+    rgba(110, 84, 255, 0.28),
+    rgba(14, 9, 28, 0) 70%
+  );
+  background-repeat: no-repeat;
+}
+
+/* The "receipt" card: dark surface (one step lighter than the page),
+   with a jagged torn edge along the bottom and a purple "ticket stub"
+   bar along the top. */
+.receipt-card {
+  position: relative;
+  background-color: #170F2B;
+  border: 1px solid #2A2140;
+  border-top: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.45);
+  border-radius: 2px;
+}
+
+.receipt-card::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #6E54FF;
+  border-radius: 2px 2px 0 0;
+}
+
+.receipt-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -9px;
+  height: 9px;
+  background-image:
+    linear-gradient(-45deg, #0E091C 6px, transparent 0),
+    linear-gradient(45deg, #0E091C 6px, transparent 0);
+  background-size: 12px 12px;
+  background-position: left top;
+  background-repeat: repeat-x;
+}
+
+/* Dashed divider between line items, like a receipt's item list. */
+.ledger-row {
+  border-bottom: 1px dashed #332B4D;
+}
+.ledger-row:last-child {
+  border-bottom: none;
+}
+
+/* Rubber-stamp effect for the "SETTLED" / "PAID" markers. On a dark card,
+   this reads as a neon-outline stamp rather than an inked imprint. */
+.stamp {
+  display: inline-block;
+  border: 3px solid currentColor;
+  border-radius: 4px;
+  padding: 0.25rem 0.75rem;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Amounts and anything numeric use the mono/receipt-printer face. */
+.figure {
+  font-family: var(--font-mono), monospace;
+  font-variant-numeric: tabular-nums;
+}
