@@ -25,7 +25,7 @@ const body = Inter({
 // link anywhere (Discord, Twitter/X, etc.) — Open Graph images and URLs
 // need to be absolute, not relative, to show up correctly in link
 // previews.
-const siteUrl = "https://your-splitbill-app.vercel.app";
+const siteUrl = "https://split-billing-on-monad.vercel.app/";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

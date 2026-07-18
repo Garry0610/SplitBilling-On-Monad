@@ -44,8 +44,8 @@ already paid.
 
 | | |
 |---|---|
-| **Project URL** | `<hosted app URL>` |
-| **Github repo** | `<this repo URL>` |
+| **Project URL** | `<https://split-billing-on-monad.vercel.app/>` |
+| **Github repo** | `<https://github.com/Garry0610/SplitBilling-On-Monad>` |
 | **Category** | `Monad Testnet` / `Monad Mainnet` (fill in whichever applies — Mainnet if deployed on both) |
 | **Contract address** | `<0x7aA08a633DFFc9028a6836935Cc2A9aAfBe8C44a>` |
 | **Demo video** | `<link, ≤3 min>` |
