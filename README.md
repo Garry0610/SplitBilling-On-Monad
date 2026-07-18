@@ -50,7 +50,7 @@ already paid.
 | **Project URL** | https://split-billing-on-monad.vercel.app/ |
 | **Github repo** | https://github.com/Garry0610/SplitBilling-On-Monad |
 | **Category** | Monad Testnet |
-| **Contract address** | 0x7aA08a633DFFc9028a6836935Cc2A9aAfBe8C44a |
+| **Contract address** | 0xCC1c8bfc7d8D324AF8d9B7A482387f7B68Cbc593 |
 | **Demo video** | https://youtu.be/3lov1K1ijK8 |
 
 ## 5. Tech Stack
