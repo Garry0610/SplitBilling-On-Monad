@@ -59,7 +59,11 @@ export function MyBillsList() {
   const myBills = bills
     .map((result, id) => {
       if (result.status !== "success") return null;
-      const bill = result.result as BillTuple;
+      // wagmi/viem infers a differently-shaped type here because the ABI's
+      // outputs are named; it doesn't structurally match our BillTuple, so
+      // we go through `unknown` first (as TS suggests) since we know the
+      // actual runtime value is array-like and destructures correctly.
+      const bill = result.result as unknown as BillTuple;
       const [organizer, label, totalAmount, paidAmount, settled, cancelled, participants] = bill;
 
       const isOrganizer = address ? organizer.toLowerCase() === address.toLowerCase() : false;

@@ -11,6 +11,16 @@ import { CornerMascots } from "@/components/CornerMascots";
 import { CopyLinkButton } from "@/components/CopyLinkButton";
 import { CancelBillButton } from "@/components/CancelBillButton";
 
+type GetBillResult = readonly [
+  `0x${string}`, // organizer
+  string,        // label
+  bigint,        // totalAmount
+  bigint,        // paidAmount
+  boolean,       // settled
+  boolean,       // cancelled
+  readonly `0x${string}`[] // participants
+];
+
 export default function BillPage({
   params,
 }: {
@@ -45,15 +55,12 @@ export default function BillPage({
         {data && (
           <>
             {(() => {
-              const [organizer, label, totalAmount, paidAmount, settled, cancelled, participants] = data as [
-                `0x${string}`,
-                string,
-                bigint,
-                bigint,
-                boolean,
-                boolean,
-                readonly `0x${string}`[]
-              ];
+              // See MyBillsList.tsx for why this goes through `unknown`
+              // first: viem infers a differently-shaped type for named
+              // ABI outputs than our tuple type, even though the runtime
+              // value destructures correctly.
+              const [organizer, label, totalAmount, paidAmount, settled, cancelled, participants] =
+                data as unknown as GetBillResult;
 
               return (
                 <div className="space-y-8">
